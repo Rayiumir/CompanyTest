@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Dana;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Dana-Regular.woff2') format("woff2");
+    font-display: swap
+}
+
+@font-face {
+    font-family: Dana;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Dana-Bold.woff2') format("woff2");
+    font-display: swap
+}
+
+body{
+    font-family: Dana;
+    background-color: #e8e8e8;
+}
+
+/* خدمات ما */
+
+.title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    color: #37517e;
+}
+
+.title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #DDD;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: 0px;
+    left: calc(50% - 20px);
+}
+
+article.box:hover{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
