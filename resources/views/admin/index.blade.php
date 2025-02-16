@@ -1,3 +1,3 @@
 <x-AdminLayout>
-    تست
+    تست 1
 </x-AdminLayout>

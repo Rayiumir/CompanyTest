@@ -16,6 +16,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin'], static function ($router){
 
     // Admin
-    $router->get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index']);
+    $router->get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+
+    // User
+
+    $router->resource('/users', \App\Http\Controllers\Admin\UserController::class)->except('show');
 
 });
