@@ -13,10 +13,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'admin'], static function ($router){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], static function ($router){
 
     // Admin
     $router->get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+    $router->get('/logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin.logout');
 
     // User
 
