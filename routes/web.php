@@ -23,4 +23,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], static fu
 
     $router->resource('/users', \App\Http\Controllers\Admin\UserController::class)->except('show');
 
+    // Category
+
+    $router->resource('/categories', \App\Http\Controllers\Admin\CategoryController::class)->except('show');
+
 });
