@@ -23,6 +23,9 @@
             @if(auth()->user()->role === 'admin')
                 <a href="{{ route('categories.index') }}" class="btn {{ request()->routeIs('categories.index') || request()->routeIs('categories.create') || request()->routeIs('categories.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-list-tree me-2"></i> دسته بندی </a>
             @endif
+            @if(auth()->user()->role === 'admin')
+                <a href="{{ route('posts.index') }}" class="btn {{ request()->routeIs('posts.index') || request()->routeIs('posts.create') || request()->routeIs('posts.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-text me-2"></i> پست ها </a>
+            @endif
         </div>
     </div>
 </div>
