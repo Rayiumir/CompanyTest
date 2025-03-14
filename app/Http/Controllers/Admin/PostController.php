@@ -65,5 +65,10 @@ class PostController extends Controller
 
         return to_route('posts.index');
     }
-    public function destroy(){}
+    public function destroy(Post $post)
+    {
+        $post->delete();
+//        $post->metaboxes()->delete();
+        return back();
+    }
 }

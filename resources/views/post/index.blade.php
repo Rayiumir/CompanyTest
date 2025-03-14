@@ -14,18 +14,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($posts as $row) @endforeach
+                @foreach($posts as $row)
                     <tr>
                         <th scope="row">1</th>
-                        <td>{{ $row->getMetabox('metabox_field') ?? 'No value set' }}</td>
+                        <td>{{ $row->getMetabox('metabox_field') }}</td>
                         <td>{{ $row->title }}</td>
                         <td>@mdo</td>
                         <td>Otto</td>
                         <td class="text-center">
                             <a href="{{ route('posts.edit', $row->id) }}"><i class="fa-duotone fa-edit text-secondary"></i></a>
-                            <a><i class="fa-duotone fa-trash text-danger"></i></a>
+                            <a onclick="event.preventDefault();document.getElementById('trash-{{$row->id}}').submit()"><i class="fa-duotone fa-trash text-danger"></i></a>
+                            <form id="trash-{{$row->id}}" action="{{ route('posts.destroy', $row->id) }}" method="POST">@csrf @method('DELETE')</form>
                         </td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
